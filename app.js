@@ -14,6 +14,7 @@ var indexRouter = require("./src/routes/index");
 var livrosRouter = require("./src/routes/livros");
 var autoresRouter = require("./src/routes/autores");
 var generosRouter = require("./src/routes/generos");
+var graficoRouter = require("./src/routes/grafico");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -25,6 +26,7 @@ app.use("/", indexRouter);
 app.use("/livros", livrosRouter);
 app.use("/autores", autoresRouter);
 app.use("/generos", generosRouter);
+app.use("/grafico", graficoRouter);
 
 app.listen(PORTA_APP, function () {
     console.log(`
@@ -42,3 +44,4 @@ app.listen(PORTA_APP, function () {
     \tSe .:producao:. você está se conectando ao banco remoto. \n\n
     \t\tPara alterar o ambiente, comente ou descomente as linhas 1 ou 2 no arquivo 'app.js'\n\n`);
 });
+

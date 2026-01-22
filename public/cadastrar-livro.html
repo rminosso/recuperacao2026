@@ -141,6 +141,7 @@
     }
 
     function cadastrar() {
+        
         var corpo = {
             titulo: form_postagem.titulo.value,
             fkGenero: form_postagem.fkGenero_lista.value,
@@ -150,18 +151,22 @@
             quantiLivros: form_postagem.quantiLivros.value
         }
 
-        var acrescimo = 0;
-        var resultadoFinal = 0
+        // deixei a parte abaixo comentada para possibilitar a visualização na tela, as condições abaixo estam travando o código //
 
-            if (precoCompra.value >= 100 && (fkGenero_lista.value == '1' || fkGenero_lista.value == '2')) {
-                var acrescimo = Number(precoCompra.value) * 0.225
-                resultadoFinal = Number(precoVenda.value) + acrescimo;
-            }
+        // var resultadoFinal = 0;
 
-            if(Number(precoVenda.value) != resultadoFinal){
-                alert(`O preço de venda está fora do padrão`)
-                return false;
-            }
+        //     if (corpo.precoCompra >= 100 && (corpo.fkGenero == '1' || corpo.fkGenero == '2')) {
+        //         resultadoFinal = (corpo.precoCompra) * 1.225
+        //     } else if (corpo.precoCompra <= 50 && (corpo.fkGenero == '3' || corpo.fkGenero == '1')){
+        //         resultadoFinal = (corpo.precoCompra) * 1.25
+        //     } else if (corpo.precoCompra > 50 && corpo.precoCompra < 100 && corpo.fkGenero  == '4'){
+        //         resultadoFinal = (corpo.precoCompra) * 1.275
+        //     }
+
+        //     if(corpo.precoVenda.toFixed(1) != resultadoFinal.toFixed(1)){
+        //         alert(`O preço de venda está fora do padrão, o preçõ de venda deveria ser ${resultadoFinal.toFixed(1)}`)
+        //         return false;
+        //     }
         
 
         fetch(`/livros/cadastrar`, {

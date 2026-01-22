@@ -14,8 +14,6 @@ function listar(req, res) {
     });
 }
 
-
-
 function cadastrar(req, res) {
     var titulo = req.body.titulo;
     var fkGenero = req.body.fkGenero;

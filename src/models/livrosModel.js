@@ -8,6 +8,7 @@ livro.id,
 livro.titulo,
 livro.precoCompra,
 livro.precoVenda,
+livro.quantiLivros,
 autor.nome as nomeAutor,
 genero.nome as nomeGenero
  from livro join autor on autor.id = livro.fkAutor join genero on genero.id = livro.fkGenero;
@@ -15,7 +16,6 @@ genero.nome as nomeGenero
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
-
 
 
 function cadastrar(titulo, fkAutor, fkGenero, precoCompra, precoVenda, quantiLivros) {
